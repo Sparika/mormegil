@@ -7,4 +7,4 @@ src = "src"
 additional-css = ["theme/css/paint-chips.css", "theme/css/custom.css"]
 
 [preprocessor.paints]
-command = "/home/sparika/workspace/mormegil/preprocessors/paints/target/debug/paint-preprocessor"
+command = "preprocessors/paints/target/debug/paint-preprocessor"

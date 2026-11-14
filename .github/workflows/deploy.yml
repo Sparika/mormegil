@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Rust with automatic caching (much faster than manual install)
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      # Build the paint preprocessor
+      - name: Build paint-preprocessor
+        run: |
+          cd preprocessors/paints
+          cargo build
+          cd ../..
+
+      # Install mdBook
+      - name: Install mdBook
+        run: cargo install mdbook
+
+      # Build the book (includes preprocessor)
+      - name: Build the book
+        run: mdbook build
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
+          keep_files: false
