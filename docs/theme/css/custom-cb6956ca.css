@@ -263,39 +263,39 @@ img,
 /* Each army has its own background-color based on TTC paints */
 /* Note: h2 a and h2 .header are targeted because mdBook wraps header text in <a class="header"> */
 
-.army-nains h2,
-.army-nains h2 a,
-.army-nains h2 .header {
+.army-nains h3,
+.army-nains h3 a,
+.army-nains h3 .header {
     background-color: #3C5C43; /* Emerald Green */
-    color: #F59E02 !important; /* Skulker Yellow */
+    color: #f5d30e !important; /* Serpent Eye Yellow */
     padding: 4px 12px !important;
     border-radius: 4px;
     margin-bottom: 0.5em !important;
 }
 
-.army-orques h2,
-.army-orques h2 a,
-.army-orques h2 .header {
+.army-orques h3,
+.army-orques h3 a,
+.army-orques h3 .header {
     background-color: #8AB86A; /* Goblinoid Green */
-    color: #F59E02 !important; /* Skulker Yellow */
+    color: #f5d30e !important; /* Serpent Eye Yellow */
     padding: 4px 12px !important;
     border-radius: 4px;
     margin-bottom: 0.5em !important;
 }
 
-.army-chaos h2,
-.army-chaos h2 a,
-.army-chaos h2 .header {
+.army-chaos h3,
+.army-chaos h3 a,
+.army-chaos h3 .header {
     background-color: #9F3041; /* Emporer Red */
-    color: #F59E02 !important; /* Skulker Yellow */
+    color: #f5d30e !important; /* Serpent Eye Yellow */
     padding: 4px 12px !important;
     border-radius: 4px;
     margin-bottom: 0.5em !important;
 }
 
-.army-empire h2,
-.army-empire h2 a,
-.army-empire h2 .header {
+.army-empire h3,
+.army-empire h3 a,
+.army-empire h3 .header {
     background-color: #F59E02; /* Skulker Yellow */
     color: #481F24 !important; /* Amphora Red */
     padding: 4px 12px !important;
@@ -303,21 +303,21 @@ img,
     margin-bottom: 0.5em !important;
 }
 
-.army-bretonniens h2,
-.army-bretonniens h2 a,
-.army-bretonniens h2 .header {
+.army-bretonniens h3,
+.army-bretonniens h3 a,
+.army-bretonniens h3 .header {
     background-color: #326AB4; /* Witching Hour Blue */
-    color: #F59E02 !important; /* Skulker Yellow */
+    color: #f5d30e !important; /* Serpent Eye Yellow */
     padding: 4px 12px !important;
     border-radius: 4px;
     margin-bottom: 0.5em !important;
 }
 
-.army-hauts-elfes h2,
-.army-hauts-elfes h2 a,
-.army-hauts-elfes h2 .header {
+.army-hauts-elfes h3,
+.army-hauts-elfes h3 a,
+.army-hauts-elfes h3 .header {
     background-color: #237FBE; /* Relic Blue */
-    color: #F59E02 !important; /* Skulker Yellow */
+    color: #f5d30e !important; /* Serpent Eye Yellow */
     padding: 4px 12px !important;
     border-radius: 4px;
     margin-bottom: 0.5em !important;
