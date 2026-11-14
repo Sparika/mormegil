@@ -16,7 +16,7 @@ Dirigeants de l'armée naine.
 
 <div class="fig-image">
 
-![Roi Nain](../../../img/warhammer-old-world/nains/Roi_wip.webp)
+![Roi Nain](../../img/warhammer-old-world/nains/Roi_wip.webp)
 
 </div>
 
@@ -42,7 +42,7 @@ Dirigeants de l'armée naine.
 
 <div class="fig-image">
 
-![Roi Nain](../../../img/warhammer-old-world/nains/roi_nain.webp)
+![Roi Nain](../../img/warhammer-old-world/nains/roi_nain.webp)
 
 </div>
 
@@ -61,7 +61,7 @@ Dirigeants de l'armée naine.
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Chef
 
-![Enclume du destin](../../../img/warhammer-old-world/nains/nains_enclume_du_destin_1.webp)
+![Enclume du destin](../../img/warhammer-old-world/nains/nains_enclume_du_destin_1.webp)
 
 ### Forgerune
 
@@ -69,7 +69,7 @@ Dirigeants de l'armée naine.
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Chef
 
-![Rune Priest](../../../img/warhammer-old-world/nains/rune_priest.webp)
+![Rune Priest](../../img/warhammer-old-world/nains/rune_priest.webp)
 
 ### Tueurs
 
@@ -77,8 +77,8 @@ Dirigeants de l'armée naine.
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Chef
 
-![Tueur](../../../img/warhammer-old-world/nains/Tueur.webp)
-![Tueur](../../../img/warhammer-old-world/nains/nains_tueurs_1.webp)
+![Tueur](../../img/warhammer-old-world/nains/Tueur.webp)
+![Tueur](../../img/warhammer-old-world/nains/nains_tueurs_1.webp)
 
 **Peintures** : 
 - Armure : {{ paint:doom-death-black }}
@@ -93,7 +93,7 @@ Dirigeants de l'armée naine.
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Chef
 
-![Tueur](../../../img/warhammer-old-world/nains/chieftain.webp)
+![Tueur](../../img/warhammer-old-world/nains/chieftain.webp)
 
 Le chef de la boite bataille au col du crâne.
 J'ai du la peindre vers 2007, quand j'ai acheté la boite de base !
@@ -104,7 +104,7 @@ J'ai du la peindre vers 2007, quand j'ai acheté la boite de base !
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Chef
 
-![Tueur](../../../img/warhammer-old-world/nains/nains_tueurs_2.webp)
+![Tueur](../../img/warhammer-old-world/nains/nains_tueurs_2.webp)
 
 ## Core
 
@@ -118,15 +118,15 @@ Unités de base de l'armée naine.
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Core
 
-![Arquebusiers](../../../img/warhammer-old-world/nains/Arquebusiers.webp)
+![Arquebusiers](../../img/warhammer-old-world/nains/Arquebusiers.webp)
 
 *16 figurines - Base 25mm*
 
-![Arquebusiers](../../../img/warhammer-old-world/nains/nains_arquebusiers_2.webp)
+![Arquebusiers](../../img/warhammer-old-world/nains/nains_arquebusiers_2.webp)
 
 *12 figurines - Base 25mm*
 
-![Arquebusiers](../../../img/warhammer-old-world/nains/nains_arquebusiers_evol.webp)
+![Arquebusiers](../../img/warhammer-old-world/nains/nains_arquebusiers_evol.webp)
 
 **Peintures** : 
 - Armure : {{ paint:scorched-earth }}
@@ -140,7 +140,7 @@ Unités de base de l'armée naine.
 **Référence** : ref
 **Jeu** : Warhammer Old World · **Catégorie** : Core
 
-![Longues barbes](../../../img/warhammer-old-world/nains/longues_barbes.webp)
+![Longues barbes](../../img/warhammer-old-world/nains/longues_barbes.webp)
 
 J'aimerais monter une unité de 18 longues barbes en métal de la 6e édition.
 Elles sont difficiles à trouver, il y en a de temps en temps sur leboncoin.
@@ -155,8 +155,8 @@ Elles sont difficiles à trouver, il y en a de temps en temps sur leboncoin.
 **Référence** : ref
 **Jeu** : Warhammer Old World · **Catégorie** : Spécial
 
-![Brise Fer](../../../img/warhammer-old-world/nains/brise_fer_1.webp)
-![Le QG](../../../img/warhammer-old-world/nains/brise_fer_2.webp)
+![Brise Fer](../../img/warhammer-old-world/nains/brise_fer_1.webp)
+![Le QG](../../img/warhammer-old-world/nains/brise_fer_2.webp)
 
 Une unité de 12 brise fer avec état major complet.
 J'aimerais en rajouter 6 de plus pour un troisième rang, notamment avec la sculpture qui me manque.
@@ -167,8 +167,8 @@ J'aimerais en rajouter 6 de plus pour un troisième rang, notamment avec la scul
 **Référence** : ref
 **Jeu** : Warhammer Old World · **Catégorie** : Spécial
 
-![Canon](../../../img/warhammer-old-world/nains/nains_canon_1.webp)
-![Canon](../../../img/warhammer-old-world/nains/nains_canon_2.webp)
+![Canon](../../img/warhammer-old-world/nains/nains_canon_1.webp)
+![Canon](../../img/warhammer-old-world/nains/nains_canon_2.webp)
 
 Une batterie de deux canons.
 
@@ -178,8 +178,8 @@ Une batterie de deux canons.
 **Référence** : ref
 **Jeu** : Warhammer Old World · **Catégorie** : Spécial
 
-![Canon](../../../img/warhammer-old-world/nains/nains_catapulte_1.webp)
-![Canon](../../../img/warhammer-old-world/nains/nains_catapulte_2.webp)
+![Canon](../../img/warhammer-old-world/nains/nains_catapulte_1.webp)
+![Canon](../../img/warhammer-old-world/nains/nains_catapulte_2.webp)
 
 Une batterie de deux catapulte à rancunes.
 
@@ -193,7 +193,7 @@ Une batterie de deux catapulte à rancunes.
 **Référence** : ref
 **Jeu** : Warhammer Old World · **Catégorie** : Rare
 
-![Canon](../../../img/warhammer-old-world/nains/canon_orgue_nains.webp)
+![Canon](../../img/warhammer-old-world/nains/canon_orgue_nains.webp)
 
 
 </div>

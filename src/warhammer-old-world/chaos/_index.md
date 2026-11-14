@@ -20,7 +20,7 @@ Un héraut de malheur !
 **Référence** : Games Workshop, Warhammer Old World Nains, 2022
 **Jeu** : Warhammer Old World · **Catégorie** : Chef
 
-![Champion](../../../img/warhammer-old-world/chaos/chaos_champion_1.webp)
+![Champion](../../img/warhammer-old-world/chaos/chaos_champion_1.webp)
 
 **Peintures** : 
 - Armure : [armure du chaos](/recettes/armures.html#armures-du-chaos)
