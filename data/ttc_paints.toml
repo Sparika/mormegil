@@ -1,0 +1,1738 @@
+# Two Thin Coats Paint Database
+# Source: https://gerinfact.github.io/ttc_citadel/
+# Format: Array of paint entries for bulk import
+# Usage: POST /api/v1/paints/import with this file
+
+# ========== Base Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Berserker Red"
+color = "Red"
+hex = "#4D1B16"
+layer = "Base"
+citadel_equivalent = "Word Bearers Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Doom Death Black"
+color = "Black"
+hex = "#3D3937"
+layer = "Base"
+citadel_equivalent = "Abaddon Black"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Death Reaper"
+color = "Black"
+hex = "#434142"
+layer = "Base"
+citadel_equivalent = "Corvus Black"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dungeon Stone Grey"
+color = "Grey"
+hex = "#5C5E60"
+layer = "Base"
+citadel_equivalent = "Mechanicus Standard Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "White Star"
+color = "White"
+hex = "#F8F9F8"
+layer = "Base"
+citadel_equivalent = "White Scar"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Marine Blue"
+color = "Blue"
+hex = "#44496F"
+layer = "Base"
+citadel_equivalent = "Macragge Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Abyss Blue"
+color = "Blue"
+hex = "#344B67"
+layer = "Base"
+citadel_equivalent = "Kantor Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Witching Hour Blue"
+color = "Blue"
+hex = "#326AB4"
+layer = "Base"
+citadel_equivalent = "Caledor Sky"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Leviathan Blue"
+color = "Blue"
+hex = "#3A7CBF"
+layer = "Base"
+citadel_equivalent = "Hoeth Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Wyvern Green"
+color = "Green"
+hex = "#404A42"
+layer = "Base"
+citadel_equivalent = "Caliban Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Scorched Earth"
+color = "Brown"
+hex = "#5A4D49"
+layer = "Base"
+citadel_equivalent = "Dryad Bark"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ancient Forest"
+color = "Brown"
+hex = "#725B52"
+layer = "Base"
+citadel_equivalent = "Gorthor Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Wasteland Brown"
+color = "Brown"
+hex = "#856C5C"
+layer = "Base"
+citadel_equivalent = "Baneblade Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Rust Orange"
+color = "Orange"
+hex = "#BA4D37"
+layer = "Base"
+citadel_equivalent = "Squig Orange"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dark Sun Yellow"
+color = "Yellow"
+hex = "#C48638"
+layer = "Base"
+citadel_equivalent = "Averland Sunset"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Barbarian Brawn"
+color = "Brown"
+hex = "#8F5F55"
+layer = "Base"
+citadel_equivalent = "Bugman's Glow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dwarven Skin"
+color = "Brown"
+hex = "#B07C62"
+layer = "Base"
+citadel_equivalent = "Cadian Fleshtone"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Elven Skin"
+color = "Brown"
+hex = "#C49774"
+layer = "Base"
+citadel_equivalent = "Kislev Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cuirass Leather"
+color = "Brown"
+hex = "#52433A"
+layer = "Base"
+citadel_equivalent = "Rhinox Hide"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Boar Hide"
+color = "Brown"
+hex = "#73453A"
+layer = "Base"
+citadel_equivalent = "Doombull Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Fur Cloak"
+color = "Brown"
+hex = "#92534E"
+layer = "Base"
+citadel_equivalent = "Tuskgor Fur"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dragon Fang"
+color = "Bone"
+hex = "#9E8460"
+layer = "Base"
+citadel_equivalent = "Zandri Dust"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Skeleton Legion"
+color = "Bone"
+hex = "#B0966C"
+layer = "Base"
+citadel_equivalent = "Ushabti Bone"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Trooper White"
+color = "White"
+hex = "#EDEBE0"
+layer = "Base"
+citadel_equivalent = "Corax White"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dust Bowl"
+color = "Brown"
+hex = "#7E634B"
+layer = "Base"
+citadel_equivalent = "Steel Legion Drab"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sandstone"
+color = "Brown"
+hex = "#927B68"
+layer = "Base"
+citadel_equivalent = "Morghast Bone"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Temple Stone"
+color = "Brown"
+hex = "#A39179"
+layer = "Base"
+citadel_equivalent = "Karak Stone"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sir Coates Silver"
+color = "Metallic"
+hex = "#494A4A"
+layer = "Base"
+citadel_equivalent = "Leadbelcher"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Spartan Bronze"
+color = "Metallic"
+hex = "#604332"
+layer = "Base"
+citadel_equivalent = "Balthazar Gold"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dragon's Gold"
+color = "Metallic"
+hex = "#4F442C"
+layer = "Base"
+citadel_equivalent = "Retributor Armour"
+
+# ========== Layer Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sanguine Scarlet"
+color = "Red"
+hex = "#961914"
+layer = "Layer"
+citadel_equivalent = "Mephiston Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Demon Red"
+color = "Red"
+hex = "#D21215"
+layer = "Layer"
+citadel_equivalent = "Evil Sun Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Skulker Yellow"
+color = "Yellow"
+hex = "#F59E02"
+layer = "Layer"
+citadel_equivalent = "Yriel Yellow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Yellow Flame"
+color = "Yellow"
+hex = "#F8B02C"
+layer = "Layer"
+citadel_equivalent = "Flash Gitz Yellow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Elysium Blue"
+color = "Blue"
+hex = "#5179AC"
+layer = "Layer"
+citadel_equivalent = "Ultramarine Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Celestial Blue"
+color = "Blue"
+hex = "#6992C0"
+layer = "Layer"
+citadel_equivalent = "Blue Horror"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Orange Flare"
+color = "Orange"
+hex = "#F29D7B"
+layer = "Layer"
+citadel_equivalent = "Fire Dragon Bright"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ethereal Green"
+color = "Green"
+hex = "#56802E"
+layer = "Layer"
+citadel_equivalent = "Moot Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Runic Purple"
+color = "Purple"
+hex = "#9C8CB3"
+layer = "Layer"
+citadel_equivalent = "Kakophoni Purple"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Wizard Grey"
+color = "Grey"
+hex = "#6D6C6C"
+layer = "Layer"
+citadel_equivalent = "Dawnstone"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Carcharodon Grey"
+color = "Grey"
+hex = "#959596"
+layer = "Layer"
+citadel_equivalent = "Administratum Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Vampire Fang"
+color = "Bone"
+hex = "#CCB899"
+layer = "Layer"
+citadel_equivalent = "Screaming Skull"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Griffon Claw"
+color = "Bone"
+hex = "#9F8F85"
+layer = "Base"
+citadel_equivalent = "Rakarth Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ivory Tusk"
+color = "Bone"
+hex = "#D2C8C0"
+layer = "Layer"
+citadel_equivalent = "Pallid Wych Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Plate Armour"
+color = "Metallic"
+hex = "#757677"
+layer = "Layer"
+citadel_equivalent = "Ironbreaker"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Mythril Blade"
+color = "Metallic"
+hex = "#818283"
+layer = "Layer"
+citadel_equivalent = "Stormhost Silver"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Glistening Gold"
+color = "Metallic"
+hex = "#5C5241"
+layer = "Layer"
+citadel_equivalent = "Liberator Gold"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Satyr Brown"
+color = "Brown"
+hex = "#D59658"
+layer = "Layer"
+citadel_equivalent = "Deathclaw Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cerberus Brown"
+color = "Brown"
+hex = "#E0AE59"
+layer = "Layer"
+citadel_equivalent = "Ungor Flesh"
+
+# ========== Shade Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Emerald Green"
+color = "Green"
+hex = "#3C5C43"
+layer = "Shade"
+citadel_equivalent = "Warpstone Glow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dread Red"
+color = "Red"
+hex = "#6F3F3F"
+layer = "Shade"
+citadel_equivalent = "Gal Vorbak Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cold Corpse Blue"
+color = "Blue"
+hex = "#51555C"
+layer = "Base"
+citadel_equivalent = "The Fana"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Scorched Earth"
+color = "Brown"
+hex = "#5A4D49"
+layer = "Shade"
+citadel_equivalent = "Dryad Bark"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Fury Green"
+color = "Green"
+hex = "#6C6C4C"
+layer = "Shade"
+citadel_equivalent = "Castellan Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Hydra Green"
+color = "Green"
+hex = "#354C4E"
+layer = "Shade"
+citadel_equivalent = "Incubi Darkness"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "War Master Green"
+color = "Green"
+hex = "#394142"
+layer = "Shade"
+citadel_equivalent = "Lupercal Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Traitor Green"
+color = "Green"
+hex = "#2d534f"
+layer = "Shade"
+citadel_equivalent = "Sons of Horus Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Oxidation Green"
+color = "Green"
+hex = "#33444d"
+layer = "Shade"
+citadel_equivalent = "Stegadon Scale Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Von Evile Purple"
+color = "Purple"
+hex = "#5a3764"
+layer = "Shade"
+citadel_equivalent = "Naggaroth Night"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Enchantress Purple"
+color = "Purple"
+hex = "#5a3764"
+layer = "Shade"
+citadel_equivalent = "Phoenician Purple"
+
+# ========== Wash Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Oblivion Black Wash"
+color = "Wash"
+hex = "#3C3A3A"
+layer = "Wash"
+citadel_equivalent = "Nuln Oil"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Battle Mud Wash"
+color = "Wash"
+hex = "#756659"
+layer = "Wash"
+citadel_equivalent = "Agrax Earthshade"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Flesh Wash"
+color = "Wash"
+hex = "#BB9B66"
+layer = "Wash"
+citadel_equivalent = "Reikland Fleshshade"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Orc Flesh Wash"
+color = "Wash"
+hex = "#3E7C41"
+layer = "Wash"
+citadel_equivalent = "Biel-Tan Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Necrosis Green Wash"
+color = "Wash"
+hex = "#718362"
+layer = "Wash"
+citadel_equivalent = "Athonian Camoshade"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Archaic Sepia Wash"
+color = "Wash"
+hex = "#9A7B66"
+layer = "Wash"
+citadel_equivalent = "Seraphim Sepia"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Hellion Red Wash"
+color = "Wash"
+hex = "#9E7371"
+layer = "Wash"
+citadel_equivalent = "Carroburg Crimson"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Tempest Blue Wash"
+color = "Wash"
+hex = "#2C465A"
+layer = "Wash"
+citadel_equivalent = "Drakenhof Nightshade"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Magi Purple Wash"
+color = "Wash"
+hex = "#6A516A"
+layer = "Wash"
+citadel_equivalent = "Druchii Violet"
+
+# ========== Glaze Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Red Glaze"
+color = "Glaze"
+hex = "#FBCCBA"
+layer = "Glaze"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Yellow Glaze"
+color = "Glaze"
+hex = "#F8F7C3"
+layer = "Glaze"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Blue Glaze"
+color = "Glaze"
+hex = "#B0BBE0"
+layer = "Glaze"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Orange Glaze"
+color = "Glaze"
+hex = "#FCBC89"
+layer = "Glaze"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Green Glaze"
+color = "Glaze"
+hex = "#C3E3AC"
+layer = "Glaze"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Purple Glaze"
+color = "Glaze"
+hex = "#CEA7C7"
+layer = "Glaze"
+citadel_equivalent = "-"
+
+# ========== Purple Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Amethyst Rayne"
+color = "Purple"
+hex = "#524169"
+layer = "Base"
+citadel_equivalent = "Xereus Purple"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sorceror's Cloak"
+color = "Purple"
+hex = "#79588D"
+layer = "Base"
+citadel_equivalent = "Genestealer Purple"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Spectral Purple"
+color = "Purple"
+hex = "#9a5a9b"
+layer = "Layer"
+citadel_equivalent = "Kakophoni Purple"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Incubus Purple"
+color = "Purple"
+hex = "#6b6a6d"
+layer = "Base"
+citadel_equivalent = "Daemonette Hide"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Enticing Purple"
+color = "Purple"
+hex = "#817b8c"
+layer = "Base"
+citadel_equivalent = "Warpfiend Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Decadent Purple"
+color = "Purple"
+hex = "#c2bfd5"
+layer = "Layer"
+citadel_equivalent = "Slaanesh Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Amulet Purple"
+color = "Purple"
+hex = "#BFACD3"
+layer = "Layer"
+citadel_equivalent = "-"
+
+# ========== Green Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Goblinoid Green"
+color = "Green"
+hex = "#8AB86A"
+layer = "Base"
+citadel_equivalent = "Warboss Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Troll Snot Green"
+color = "Green"
+hex = "#9DC576"
+layer = "Layer"
+citadel_equivalent = "Skarsnik Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Jade Green"
+color = "Green"
+hex = "#2F7967"
+layer = "Base"
+citadel_equivalent = "Kabalite Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ghoul Green"
+color = "Green"
+hex = "#52BD97"
+layer = "Layer"
+citadel_equivalent = "Sybarite Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Contagion Green"
+color = "Green"
+hex = "#8e9f7f"
+layer = "Base"
+citadel_equivalent = "Death Guard Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Zombie Rot"
+color = "Green"
+hex = "#b3b87a"
+layer = "Base"
+citadel_equivalent = "Ionrach Skin"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Pestilence Green"
+color = "Green"
+hex = "#d4e197"
+layer = "Layer"
+citadel_equivalent = "Deepkin Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Antiquity Green"
+color = "Green"
+hex = "#317f7d"
+layer = "Base"
+citadel_equivalent = "Sotek Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Mythic Turquoise"
+color = "Turquoise"
+hex = "#589e9d"
+layer = "Base"
+citadel_equivalent = "Temple Guard Blue"
+
+# ========== Blue Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sentient Turquoise"
+color = "Turquoise"
+hex = "#3A84A2"
+layer = "Layer"
+citadel_equivalent = "Thousand Sons Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cursed Blue"
+color = "Blue"
+hex = "#4199B4"
+layer = "Layer"
+citadel_equivalent = "Ahriman Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ray Gun Blue"
+color = "Blue"
+hex = "#47B0C3"
+layer = "Layer"
+citadel_equivalent = "Baharroth Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Eldar Robe"
+color = "Blue"
+hex = "#1d5aa3"
+layer = "Base"
+citadel_equivalent = "Caledor Sky"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Relic Blue"
+color = "Blue"
+hex = "#237fbe"
+layer = "Base"
+citadel_equivalent = "Teclis Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Seafarer Blue"
+color = "Blue"
+hex = "#469cc8"
+layer = "Layer"
+citadel_equivalent = "Lothern Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Faust Blue"
+color = "Blue"
+hex = "#47525c"
+layer = "Base"
+citadel_equivalent = "Dark Reaper"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Shadow Blue"
+color = "Blue"
+hex = "#4f646c"
+layer = "Base"
+citadel_equivalent = "Thunderhawk Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Frost Blue"
+color = "Blue"
+hex = "#79979f"
+layer = "Base"
+citadel_equivalent = "Fenrisian Grey"
+
+# ========== Skin & Flesh Tones ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Argonaut Skin"
+color = "Brown"
+hex = "#A78E6D"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Kronos Flesh"
+color = "Brown"
+hex = "#C09B70"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ares Flesh"
+color = "Brown"
+hex = "#DEC287"
+layer = "Layer"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Druid Flesh"
+color = "Brown"
+hex = "#543D32"
+layer = "Base"
+citadel_equivalent = "Catachan Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Paladin Flesh"
+color = "Brown"
+hex = "#77564B"
+layer = "Base"
+citadel_equivalent = "Blood Reaver Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Bard Skin"
+color = "Brown"
+hex = "#946F61"
+layer = "Base"
+citadel_equivalent = "Knight Questor Flesh"
+
+# ========== Pink & Special Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sword Hilt Burgundy"
+color = "Red"
+hex = "#773D4B"
+layer = "Base"
+citadel_equivalent = "Screamer Pink"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Glistening Gums"
+color = "Pink"
+hex = "#995879"
+layer = "Layer"
+citadel_equivalent = "Pink Horror"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Perisher Pink"
+color = "Pink"
+hex = "#BA6367"
+layer = "Layer"
+citadel_equivalent = "Pink Horror"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Hot Pink"
+color = "Pink"
+hex = "#E284A6"
+layer = "Layer"
+citadel_equivalent = "Emperor's Children"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Neo Pink"
+color = "Pink"
+hex = "#F3BCDA"
+layer = "Layer"
+citadel_equivalent = "Fulgrim Pink"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Asmodeus Red"
+color = "Red"
+hex = "#8E4847"
+layer = "Base"
+citadel_equivalent = "Khorne Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Evil Eye Red"
+color = "Red"
+hex = "#C15E50"
+layer = "Base"
+citadel_equivalent = "Wazdakka Red"
+
+# ========== Grey & Neutral Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Wolf Grey"
+color = "Grey"
+hex = "#627688"
+layer = "Base"
+citadel_equivalent = "Russ Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Gravestone Blue"
+color = "Grey"
+hex = "#7C8897"
+layer = "Base"
+citadel_equivalent = "Fenrisian Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ashen Grey"
+color = "Grey"
+hex = "#4F5249"
+layer = "Base"
+citadel_equivalent = "Eshin Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Eidolon Grey"
+color = "Grey"
+hex = "#535549"
+layer = "Base"
+citadel_equivalent = "Skavenblight Dinge"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Rodent Grey"
+color = "Grey"
+hex = "#707264"
+layer = "Base"
+citadel_equivalent = "Stormvermin Fur"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Field Grey"
+color = "Grey"
+hex = "#6D725E"
+layer = "Base"
+citadel_equivalent = "Vulkan Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Kobold Grey"
+color = "Grey"
+hex = "#868B75"
+layer = "Base"
+citadel_equivalent = "Krieg Khaki"
+
+# ========== Brown Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Scabbard Brown"
+color = "Brown"
+hex = "#7c5e48"
+layer = "Base"
+citadel_equivalent = "Thondia Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Boot Strap Brown"
+color = "Brown"
+hex = "#835f44"
+layer = "Base"
+citadel_equivalent = "Gorthor Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Vambrace Brown"
+color = "Brown"
+hex = "#9c755d"
+layer = "Base"
+citadel_equivalent = "Baneblade Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Noble Steed Brown"
+color = "Brown"
+hex = "#765439"
+layer = "Base"
+citadel_equivalent = "Mournfang Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dry Rust Brown"
+color = "Brown"
+hex = "#B97740"
+layer = "Base"
+citadel_equivalent = "Skrag Brown"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Gyzmo Fur"
+color = "Brown"
+hex = "#D38A51"
+layer = "Base"
+citadel_equivalent = "XV-88"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Manticore Ochre"
+color = "Brown"
+hex = "#D79845"
+layer = "Base"
+citadel_equivalent = "Tau Light Ochre"
+
+# ========== Metallic Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dwarven Iron"
+color = "Metallic"
+hex = "#91928E"
+layer = "Base"
+citadel_equivalent = "Iron Warriors"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Battle Axe Brass"
+color = "Metallic"
+hex = "#C09A74"
+layer = "Base"
+citadel_equivalent = "Runelord Brass"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Steampunk Copper"
+color = "Metallic"
+hex = "#BE673F"
+layer = "Base"
+citadel_equivalent = "Screaming Bell"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Overlord Brass"
+color = "Metallic"
+hex = "#B39471"
+layer = "Base"
+citadel_equivalent = "Castellax Bronze"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Top Brass"
+color = "Metallic"
+hex = "#EFB96D"
+layer = "Layer"
+citadel_equivalent = "Sycorax Bronze"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Platinum Crown"
+color = "Metallic"
+hex = "#EDE0CA"
+layer = "Layer"
+citadel_equivalent = "Canoptek Alloy"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Heirloom Gold"
+color = "Metallic"
+hex = "#c8a058"
+layer = "Base"
+citadel_equivalent = "Skullcrusher Brass"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Bits O' Tin"
+color = "Metallic"
+hex = "#6d6157"
+layer = "Base"
+citadel_equivalent = "Runeford Brass"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Chaos Bronze"
+color = "Metallic"
+hex = "#b59774"
+layer = "Base"
+citadel_equivalent = "Brass Scorpion"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Blue Steel"
+color = "Metallic"
+hex = "#7e8c8b"
+layer = "Base"
+citadel_equivalent = "Grey Knights Steel"
+
+# ========== Additional Colors ==========
+[[paints]]
+brand = "Two Thin Coats"
+name = "Royal Cloak"
+color = "Red"
+hex = "#5B4349"
+layer = "Base"
+citadel_equivalent = "Barak-Nar Burgundy"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cold Corpse Blue"
+color = "Blue"
+hex = "#51555C"
+layer = "Base"
+citadel_equivalent = "The Fana"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Orc Hide"
+color = "Green"
+hex = "#7B9C69"
+layer = "Base"
+citadel_equivalent = "Waaagh! Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ranger Cloak"
+color = "Green"
+hex = "#7E8352"
+layer = "Base"
+citadel_equivalent = "Sons Of Horus Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Gung-Ho Green"
+color = "Green"
+hex = "#A8A264"
+layer = "Base"
+citadel_equivalent = "Loren Forest"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Green Beret"
+color = "Green"
+hex = "#ABAC87"
+layer = "Base"
+citadel_equivalent = "Starken Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Hellspawn Red"
+color = "Red"
+hex = "#BE3A2E"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Craven Yellow"
+color = "Yellow"
+hex = "#ECEB69"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Gigawatt Blue"
+color = "Blue"
+hex = "#56B7E8"
+layer = "Layer"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Flaming Forge Orange"
+color = "Orange"
+hex = "#EAA545"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Talisman Green"
+color = "Green"
+hex = "#7AC142"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Solar Flare"
+color = "Orange"
+hex = "#f18021"
+layer = "Base"
+citadel_equivalent = "Lugganath Orange"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ion Blue"
+color = "Blue"
+hex = "#b7d8da"
+layer = "Layer"
+citadel_equivalent = "Blue Horror"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Septic Green"
+color = "Green"
+hex = "#cbab7b"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Pale Skin"
+color = "Bone"
+hex = "#cbab7b"
+layer = "Base"
+citadel_equivalent = "Flayed One Flesh"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Scarab Red"
+color = "Red"
+hex = "#bb4448"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Omega Blue"
+color = "Blue"
+hex = "#58bfbe"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Enchantment Blue"
+color = "Blue"
+hex = "#337fae"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Emporer's Purple"
+color = "Purple"
+hex = "#836493"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Carapace Green"
+color = "Green"
+hex = "#4f9a5a"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Fire Opal"
+color = "Brown"
+hex = "#a56447"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ancient Gold"
+color = "Metallic"
+hex = "#6d5e3f"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Doom Metal"
+color = "Metallic"
+hex = "#686559"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Smoke Grey Wash"
+color = "Wash"
+hex = "#c3bfb7"
+layer = "Wash"
+citadel_equivalent = "Soulblight Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Hazard Yellow Wash"
+color = "Wash"
+hex = "#c27555"
+layer = "Wash"
+citadel_equivalent = "Casandora Yellow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Aztec Turquoise Wash"
+color = "Wash"
+hex = "#596969"
+layer = "Wash"
+citadel_equivalent = "Coelia Greenshade"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Bone Wash"
+color = "Wash"
+hex = "#80645c"
+layer = "Wash"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Satin Varnish"
+color = "Varnish"
+hex = "#777475"
+layer = "Varnish"
+citadel_equivalent = "StormShield"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Blood Red Sky"
+color = "Red"
+hex = "#593f32"
+layer = "Shade"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Flayer Red"
+color = "Red"
+hex = "#d94045"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Diablo Red"
+color = "Red"
+hex = "#e74e25"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Archon Orange"
+color = "Orange"
+hex = "#ed8433"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Pustule Ochre"
+color = "Brown"
+hex = "#e7b230"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Abhorrent Ochre"
+color = "Brown"
+hex = "#cba633"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Malign Yellow"
+color = "Yellow"
+hex = "#d2b750"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cultmaster Green"
+color = "Green"
+hex = "#47605c"
+layer = "Shade"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Betrayer Green"
+color = "Green"
+hex = "#5e7966"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Diabolical Green"
+color = "Green"
+hex = "#3d4224"
+layer = "Shade"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Crypt Grey"
+color = "Grey"
+hex = "#99a189"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Altar Ivory"
+color = "Bone"
+hex = "#ebe9da"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Grindhouse Orange"
+color = "Orange"
+hex = "#b36648"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Masque Flesh"
+color = "Brown"
+hex = "#c4866d"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Noir Brown"
+color = "Brown"
+hex = "#5a4b38"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cinderborn Brown"
+color = "Brown"
+hex = "#997462"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Dystopian Dust"
+color = "Brown"
+hex = "#bda599"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Blight Cream"
+color = "Bone"
+hex = "#f3e7d2"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Divination White"
+color = "White"
+hex = "#f8f7ed"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Animus Black"
+color = "Black"
+hex = "#414740"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Cherubic White"
+color = "White"
+hex = "#fbfbf8"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Old Brown Metal"
+color = "Metallic"
+hex = "#a59275"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ancient Iron"
+color = "Metallic"
+hex = "#b49679"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ironclad Silver"
+color = "Metallic"
+hex = "#a89271"
+layer = "Base"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Brown Ink"
+color = "Ink"
+hex = "#4d5045"
+layer = "Ink"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Warm Brown Ink"
+color = "Ink"
+hex = "#8b2411"
+layer = "Ink"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Deep Red Ink"
+color = "Ink"
+hex = "#b26b56"
+layer = "Ink"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Tobacco Ink"
+color = "Ink"
+hex = "#e6c46f"
+layer = "Ink"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Black Ink"
+color = "Ink"
+hex = "#7e8276"
+layer = "Ink"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "White Ink"
+color = "Ink"
+hex = "#fcfdf7"
+layer = "Ink"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Gloss Varnish"
+color = "Varnish"
+hex = "#666161"
+layer = "Varnish"
+citadel_equivalent = "-"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Red Rage"
+color = "Red"
+hex = "#6b342b"
+layer = "Shade"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Apocalypse Sky"
+color = "Red"
+hex = "#e54d40"
+layer = "Base"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Inferno Orange"
+color = "Orange"
+hex = "#a68e42"
+layer = "Base"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Panzer Yellow"
+color = "Yellow"
+hex = "#a68e42"
+layer = "Base"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Flak Gun Yellow"
+color = "Yellow"
+hex = "#c7ab5c"
+layer = "Base"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Ambush Yellow"
+color = "Yellow"
+hex = "#e4cc74"
+layer = "Layer"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Serpent Eye Yellow"
+color = "Yellow"
+hex = "#f5d30e"
+layer = "Layer"
+citadel_equivalent = "Phalanx Yellow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Sun Bleach Yellow"
+color = "Yellow"
+hex = "#f4e752"
+layer = "Layer"
+citadel_equivalent = "Dorn Yellow"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Twin Suns Yellow"
+color = "Yellow"
+hex = "#e5e9af"
+layer = "Base"
+citadel_equivalent = "N/A"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Legion Green"
+color = "Green"
+hex = "#276c67"
+layer = "Base"
+citadel_equivalent = "Sybarite Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Zombie Rot"
+color = "Green"
+hex = "#b3b87a"
+layer = "Base"
+citadel_equivalent = "Ionrach Skin"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Contagion Green"
+color = "Green"
+hex = "#8e9f7f"
+layer = "Base"
+citadel_equivalent = "Death Guard Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Antiquity Green"
+color = "Green"
+hex = "#317f7d"
+layer = "Base"
+citadel_equivalent = "Sotek Green"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Faust Blue"
+color = "Blue"
+hex = "#47525c"
+layer = "Base"
+citadel_equivalent = "Dark Reaper"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Shadow Blue"
+color = "Blue"
+hex = "#4f646c"
+layer = "Base"
+citadel_equivalent = "Thunderhawk Blue"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Frost Blue"
+color = "Blue"
+hex = "#79979f"
+layer = "Base"
+citadel_equivalent = "Fenrisian Grey"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Emporer Red"
+color = "Red"
+hex = "#9f3041"
+layer = "Base"
+citadel_equivalent = "Wazdakka Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Centurion Red"
+color = "Red"
+hex = "#e83032"
+layer = "Base"
+citadel_equivalent = "Wild Rider Red"
+
+[[paints]]
+brand = "Two Thin Coats"
+name = "Amphora Red"
+color = "Red"
+hex = "#481f24"
+layer = "Shade"
+citadel_equivalent = "Gal Vorbak Red"

@@ -1,0 +1,20 @@
+# Build output
+/book/
+
+# Preprocessor build artifacts
+/preprocessors/paints/target/
+
+# Raw images (uncompressed, original size)
+/raw/
+
+# IDE/OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*.tmp

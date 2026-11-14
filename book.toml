@@ -1,0 +1,10 @@
+[book]
+title = "Mormegil"
+authors = ["Sparika"]
+src = "src"
+
+[output.html]
+additional-css = ["theme/css/paint-chips.css", "theme/css/custom.css"]
+
+[preprocessor.paints]
+command = "/home/sparika/workspace/mormegil/preprocessors/paints/target/debug/paint-preprocessor"
