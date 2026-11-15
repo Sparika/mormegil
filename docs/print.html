@@ -30,7 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="theme/css/paint-chips-1ce5bd76.css">
-        <link rel="stylesheet" href="theme/css/custom-cb6956ca.css">
+        <link rel="stylesheet" href="theme/css/custom-3a586779.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -38,10 +38,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-4f9607b8.js";
+            window.path_to_searchindex_js = "searchindex-52bb4418.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-7b45f4df.js"></script>
+        <script src="toc-18033a2c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -187,163 +187,6 @@
 </ul>
 <p><em>En construction…</em></p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="plan-de-développement--blog-peinture-de-figurines"><a class="header" href="#plan-de-développement--blog-peinture-de-figurines">Plan de développement — Blog peinture de figurines</a></h1>
-<p>Projet : blog statique mdBook combinant gestion de projets de peinture (Ray Larose), fiches de collection (SoLégends) et simplicité éditoriale (Harm’s Workshop).</p>
-<p>Modèle de données retenu : une page par unité (fiche unique collection + suivi peinture), une armée par figurine, pages armée découpées par catégories dépendant du jeu, recettes réutilisables dans une section séparée, tout manuel au départ.</p>
-<h2 id="principe-directeur"><a class="header" href="#principe-directeur">Principe directeur</a></h2>
-<p>Chaque phase produit un site complet et publiable. On ne commence jamais une phase tant que la précédente n’est pas en ligne. Les métadonnées des fiches et le catalogue de peintures sont uniformes dès le prototype, pour que l’automatisation future (phase 5) puisse parser les fiches sans migration.</p>
-<p>Deux conventions transverses posées dès le départ :</p>
-<ul>
-<li>Catalogue de peintures : <code>data/ttc_paints.toml</code> constitue la <strong>référence principale</strong>. Chaque peinture a un identifiant, un nom, une marque (Two Thin Coats), une couleur hex. C’est la source unique pour les pastilles de couleur et le futur tableau de conversion ; jamais de couleur ou d’équivalence codée en dur ailleurs.
-<strong>Note</strong> : Le format <code>[[paints]]</code> (array of tables) de <code>ttc_paints.toml</code> est directement compatible avec le preprocessor Rust implémenté en Phase 0. Pas besoin de catalogue complémentaire.</li>
-<li>Balise de peinture dans les fiches et recettes : <code>{{ paint:berserker-red }}</code>, remplacée au build par une pastille de couleur + nom du vernis. Un identifiant inconnu fait échouer le build.</li>
-</ul>
-<hr>
-<h2 id="phase-0--prototype-1-session"><a class="header" href="#phase-0--prototype-1-session">Phase 0 — Prototype (1 session)</a></h2>
-<p>Objectif : un site qui tourne en local avec une seule armée d’exemple.</p>
-<ul>
-<li>Installer mdBook (binaire ou <code>cargo install mdbook</code>).</li>
-<li>Arborescence minimale :
-<pre><code>src/
-  SUMMARY.md
-  accueil.md
-  JEU/
-    ARMEE/_index.md
-    ARMEE/categorie.md       # contient 1-2 fiches unités
-  recettes/peau-dorque.md
-data/
-  ttc_paints.toml           # catalogue Two Thin Coats (référence principale)
-book.toml
-theme/
-  paint-chips.css          # styles pour les pastilles (prêt pour le preprocessor)
-</code></pre>
-<strong>Note</strong> : Certains jeux n’ont pas d’armée, donc la structure peut être plus plate (ex: <code>src/JEU/...</code> sans niveau ARMEE).</li>
-<li><strong>Images</strong> : Les images originales sont dans <code>raw/</code> (gitignoré). Les images réduites (max 1600px, qualité 80) sont dans <code>src/img/</code> avec la même structure. Ex: <code>src/img/warhammer-old-world/nains/Roi_wip.webp</code>.</li>
-<li><strong>Catalogue de peintures</strong> : Utiliser uniquement <code>data/ttc_paints.toml</code> comme référence. Les balises <code>{{ paint:scorched-earth }}</code> dans les fiches font référence aux identifiants du catalogue Two Thin Coats.</li>
-<li>Fiche unité type avec métadonnées fixes, toujours dans cet ordre :
-<pre><code>**Statut** : à monter / sous-couche / en cours / terminée
-**Référence** : marque, référence, édition, années
-**Jeu** : ... · **Catégorie** : ...
-**Recettes** : liens
-**Peintures** : liste
-</code></pre>
-</li>
-<li>Page de recette type : partie concernée (armure, chair, métal…), liste de marches, marque de peinture pour chaque étape.</li>
-<li><strong>Catalogue de peintures</strong> : <code>data/ttc_paints.toml</code> est la <strong>référence principale</strong>. Le preprocessor Rust (Phase 0) parse directement son format <code>[[paints]]</code>. CSS de pastille dans <code>theme/</code>.</li>
-<li>Convention photos : images redimensionnées avant commit (max 1600px, qualité 80). mdBook ne fait ni miniature ni compression.</li>
-<li><code>mdbook serve</code> pour vérifier le rendu, thèmes clair/sombre, recherche native.</li>
-</ul>
-<p>Critère de sortie : le prototype s’affiche correctement en local, fiche et recette liées entre elles.</p>
-<h3 id="implémentation-technique---phase-0"><a class="header" href="#implémentation-technique---phase-0">Implémentation technique - Phase 0</a></h3>
-<ul>
-<li><strong>Preprocessor</strong> : Rust avec <code>mdbook-preprocessor</code> 0.5.x (crate <code>mdbook-preprocessor</code> uniquement, pas <code>mdbook</code>)
-<ul>
-<li>Emplacement : <code>preprocessors/paints/</code></li>
-<li>Configuration : <code>[preprocessor.paints]</code> dans <code>book.toml</code></li>
-</ul>
-</li>
-<li><strong>Balises de peinture</strong> : <code>{{ paint:scorched-earth }}</code>
-<ul>
-<li>Les espaces autour de <code>:</code> et de l’identifiant sont <strong>optionnels</strong> (ex: <code>{{paint:scorched-earth}}</code> ou <code>{{ paint: scorched-earth }}</code> fonctionnent)</li>
-<li>L’identifiant doit correspondre à un nom normalisé (minuscules, espaces → tirets) d’une entrée dans <code>data/ttc_paints.toml</code></li>
-</ul>
-</li>
-<li><strong>Sortie</strong> : Chaque balise est remplacée par :
-<pre><code class="language-html">&lt;span class="paint-chip" style="background-color: #HEX;" title="NOM - Two Thin Coats"&gt;NOM&lt;/span&gt;
-</code></pre>
-</li>
-<li><strong>Catalogue</strong> : Le format <code>[[paints]]</code> de <code>data/ttc_paints.toml</code> est directement compatible, pas besoin de catalogue complémentaire</li>
-<li><strong>CSS</strong> : Fichier <code>theme/paint-chips.css</code> pour le style des pastilles</li>
-</ul>
-<h2 id="phase-1--contenu-réel-2-3-sessions"><a class="header" href="#phase-1--contenu-réel-2-3-sessions">Phase 1 — Contenu réel (2-3 sessions)</a></h2>
-<p>Objectif : votre vrai contenu, encore tout manuel.</p>
-<ul>
-<li>Créer une armée par projet réel en cours, avec les catégories du jeu correspondant.</li>
-<li>Saisir toutes les unités en cours ou terminées.</li>
-<li>Écrire les 3-5 premières recettes que vous réutilisez.</li>
-<li>Convention d’images : les images originales sont dans <code>raw/</code> (gitignoré), les images réduites dans <code>src/img/</code> avec la même structure. Script de réduction : <code>./reduce_images.sh</code> (utilise ImageMagick : <code>mogrify -resize 1600x1600 -quality 80</code>). Le pipeline de la phase 2 contrôlera qu’aucune image ne dépasse un seuil de poids.</li>
-<li>Vérifier la recherche native : retrouver une peinture, une unité, une recette.</li>
-<li><strong>Peintures</strong> : Utiliser uniquement <code>data/ttc_paints.toml</code> comme référence. Les balises <code>{{ paint:scorched-earth }}</code> doivent correspondre aux identifiants définis dans ce catalogue.</li>
-</ul>
-<p>Critère de sortie : le site reflète vos projets réels, utilisable comme outil au chevet du bureau de peinture.</p>
-<h2 id="phase-2--publication-1-session"><a class="header" href="#phase-2--publication-1-session">Phase 2 — Publication (1 session)</a></h2>
-<p>Objectif : le site est en ligne.</p>
-<ul>
-<li>Dépôt Git (GitHub ou équivalent).</li>
-<li>CI : pipeline qui lance <code>mdbook build</code> et publie le dossier <code>book/</code> sur Pages (ou Netlify : build <code>mdbook build</code>, publish <code>book</code>).</li>
-<li>Workflow d’ajout : nouveau fichier Markdown, commit, push, site mis à jour.</li>
-<li>Personnalisation minimale : logo, couleurs, police via <code>theme/</code> (CSS seulement, pas de refonte).</li>
-<li>Contrôle CI : le build échoue si une image dépasse le seuil de poids ou si une balise <code>{{ paint:... }}</code> référence un identifiant absent du catalogue (<code>data/ttc_paints.toml</code>)</li>
-</ul>
-<p>Critère de sortie : <code>git push</code> met le site à jour, vous pouvez partager l’URL.</p>
-<h2 id="phase-3--confort-de-lecture-1-2-sessions"><a class="header" href="#phase-3--confort-de-lecture-1-2-sessions">Phase 3 — Confort de lecture (1-2 sessions)</a></h2>
-<p>Objectif : le site devient agréable à parcourir, pas seulement utile.</p>
-<ul>
-<li>Plugin lightbox pour les photos (mdbook-embedify ou JS custom dans <code>theme/</code>), pour afficher les images en plein écran au clic. Option vignette double fichier (<code>-min.webp</code> 400px en fiche, plein format en lightbox) si les fiches deviennent lourdes.</li>
-<li>Page d’accueil : derniers travaux terminés, comptages (X unités, Y terminées) saisis à la main.</li>
-<li>Page “conversion de peintures” : tableau des équivalences entre gammes (utilisant les champs d’équivalence de <code>data/ttc_paints.toml</code> si disponibles) — pas de saisie dupliquée, la source unique est le TOML.</li>
-<li>Page “nouveau en peinture ?” avec 2-3 recettes simples, dans l’esprit Harm’s Workshop.</li>
-</ul>
-<p>Critère de sortie : navigation et lecture photo confortables sur mobile comme desktop.</p>
-<h2 id="phase-4--blog-éditorial-1-session"><a class="header" href="#phase-4--blog-éditorial-1-session">Phase 4 — Blog éditorial (1 session)</a></h2>
-<p>Objectif : section posts pour les tutoriels et billets au fil de l’eau.</p>
-<ul>
-<li><code>src/posts/</code>, un fichier par billet, ordre antéchronologique dans <code>SUMMARY.md</code>.</li>
-<li>Convention de titre : <code>AAAA-MM-JJ - Titre</code>.</li>
-<li>Décision à ce stade : commentaires ou non. Si oui, Giscus (GitHub Discussions), ajouté dans <code>theme/</code> comme JS additionnel.</li>
-</ul>
-<p>Critère de sortie : un premier vrai billet en ligne.</p>
-<h2 id="phase-5--automatisation-quand-la-saisie-manuelle-devient-pénible"><a class="header" href="#phase-5--automatisation-quand-la-saisie-manuelle-devient-pénible">Phase 5 — Automatisation (quand la saisie manuelle devient pénible)</a></h2>
-<p>Objectif : les index et comptages deviennent générés, plus jamais saisis à la main.</p>
-<ul>
-<li>Script au build (Python ou shell + un parseur Markdown) qui :
-<ul>
-<li>lit les métadonnées des fiches (statut, armée, jeu, catégorie, peintures) ;</li>
-<li>régénère les pages d’index d’armée (unités par catégorie, comptage par statut) ;</li>
-<li>régénère la page d’accueil (derniers terminés, totaux) ;</li>
-<li>régénère <code>SUMMARY.md</code> ;</li>
-<li>génère l’index inversé peinture → unités qui l’utilisent (à partir des balises <code>{{ paint:... }}</code> des fiches, sans métadonnée dupliquée).</li>
-</ul>
-</li>
-<li>Le pipeline CI lance le script avant <code>mdbook build</code>.</li>
-<li>Condition de déclenchement : les fiches respectent strictement le format de métadonnées de la phase 0. Toute fiche non conforme fait échouer le build (validation simple).</li>
-</ul>
-<p>Critère de sortie : ajouter une unité = créer un seul fichier, tout le reste se met à jour.</p>
-<h2 id="phase-6--extensions-optionnelles-à-la-demande"><a class="header" href="#phase-6--extensions-optionnelles-à-la-demande">Phase 6 — Extensions optionnelles (à la demande)</a></h2>
-<ul>
-<li>Galeries par armée (pages d’images seules).</li>
-<li>Filtres par statut (pages générées “tout ce qui est en cours”, statique).</li>
-<li>Export des recettes en fiches imprimables (une recette = une page A4).</li>
-<li>Multilingue si le lectorat devient mixte FR/EN.</li>
-<li>Liens vers les fiches de référence des gammes anciennes (SoLégends) pour vos figurines vintage.</li>
-</ul>
-<hr>
-<h2 id="règles-de-collaboration-avec-vibe"><a class="header" href="#règles-de-collaboration-avec-vibe">Règles de collaboration avec Vibe</a></h2>
-<ul>
-<li>Une phase = une ou plusieurs conversations de travail, avec un objectif vérifiable.</li>
-<li>Les fichiers du site sont en Markdown pur : toute demande d’édition de fiche, de recette ou de page passe par du texte, jamais par des outils externes.</li>
-<li>Vibe peut créer l’armée suivante, les fiches ou les recettes à partir de vos notes ou photos ; demander les informations manquantes au moment de la création de la fiche.</li>
-<li>Toujours fournir le contenu de la fiche (statut, référence, peintures) ; la structure et la mise en forme sont gérées automatiquement.</li>
-<li>Les conventions (métadonnées de phase 0, stockage des images dans la structure des pages, catalogue <code>data/ttc_paints.toml</code> et balise <code>{{ paint:... }}</code>) sont à respecter dans toutes les éditions, même manuelles. Une nouvelle peinture passe toujours par une entrée dans <code>data/ttc_paints.toml</code>, jamais par du HTML codé en dur.</li>
-</ul>
-<h2 id="jalons-synthétiques"><a class="header" href="#jalons-synthétiques">Jalons synthétiques</a></h2>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Phase</th><th>Livrable</th><th>Vérification</th></tr>
-</thead>
-<tbody>
-<tr><td>0</td><td>Prototype local (fiches, recettes, pastilles de peinture)</td><td>Rendu correct, balises peintures remplacées</td></tr>
-<tr><td>1</td><td>Contenu réel</td><td>Le site sert au quotidien</td></tr>
-<tr><td>2</td><td>Site publié</td><td>Push = mise en ligne</td></tr>
-<tr><td>3</td><td>Confort de lecture</td><td>Photos et navigation agréables</td></tr>
-<tr><td>4</td><td>Blog</td><td>Premier billet en ligne</td></tr>
-<tr><td>5</td><td>Automatisation</td><td>Une unité = un fichier</td></tr>
-<tr><td>6</td><td>Extensions</td><td>À la demande</td></tr>
-</tbody>
-</table>
-</div>
-<div style="break-before: page; page-break-before: always;"></div>
 <h1 id="crédits"><a class="header" href="#crédits">Crédits</a></h1>
 <p>Ce site s’inspire des travaux et des approches des communautés suivantes :</p>
 <h2 id="inspirations"><a class="header" href="#inspirations">Inspirations</a></h2>
@@ -390,6 +233,22 @@ theme/
 <p>Cavalerie noble et chevaliers de l’Ancien Monde.</p>
 <h2 id="chef"><a class="header" href="#chef">Chef</a></h2>
 <p>Chevaliers et champions bretonniens.</p>
+<h3 id="duc-sur-pégase"><a class="header" href="#duc-sur-pégase">Duc sur Pégase</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/bretonniens/bret_pegase_1.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/bretonniens/bret_pegase_1.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
 <h3 id="damoiselle"><a class="header" href="#damoiselle">Damoiselle</a></h3>
 <div class="fig-card">
 <div class="fig-image">
@@ -407,8 +266,73 @@ theme/
 
 </div>
 
+<h3 id="duc-à-cheval"><a class="header" href="#duc-à-cheval">Duc à Cheval</a></h3>
+<div class="fig-card">
+<div class="fig-image grid-2">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/bretonniens/bret_lord_1.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/bretonniens/bret_lord_1.webp" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/bretonniens/bret_lord_2.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/bretonniens/bret_lord_2.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
 <h2 id="core"><a class="header" href="#core">Core</a></h2>
 <p>Unités de base bretonniennes.</p>
+<h3 id="paysans-archers"><a class="header" href="#paysans-archers">Paysans Archers</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/bretonniens/bret_archers_1.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/bretonniens/bret_archers_1.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="paysans-hommes-darmes-1"><a class="header" href="#paysans-hommes-darmes-1">Paysans Hommes d’Armes 1</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/bretonniens/bret_hommes_darmes_2.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/bretonniens/bret_hommes_darmes_2.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="paysans-hommes-darmes-2"><a class="header" href="#paysans-hommes-darmes-2">Paysans Hommes d’Armes 2</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/bretonniens/bret_hommes_darmes_2.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/bretonniens/bret_hommes_darmes_2.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
 <h2 id="spécial"><a class="header" href="#spécial">Spécial</a></h2>
 <h2 id="rare"><a class="header" href="#rare">Rare</a></h2>
 </div>
@@ -434,9 +358,90 @@ theme/
 </ul>
 <p><strong>Peintures</strong> :</p>
 <ul>
-<li>Armure : <a href="/recettes/armures.html#armures-du-chaos">armure du chaos</a></li>
-<li>Cape : <a href="/recettes/cuirs.html#un-cuir-sale">cuir sale</a></li>
-<li>Bottes : <a href="/recettes/cuirs.html#un-cuir-clair">cuir clair</a></li>
+<li>Armure : <a href="#armures-du-chaos">armure du chaos</a></li>
+<li>Cape : <a href="#un-cuir-sale">cuir sale</a></li>
+<li>Bottes : <a href="#un-cuir-clair">cuir clair</a></li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="slambo"><a class="header" href="#slambo">Slambo</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/chaos/chaos_slambo.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/chaos/chaos_slambo.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="sorcier-du-chaos"><a class="header" href="#sorcier-du-chaos">Sorcier du Chaos</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/chaos/chaos_sorcier_1.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/chaos/chaos_sorcier_1.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="chaman-hommes-bêtes"><a class="header" href="#chaman-hommes-bêtes">Chaman Hommes Bêtes</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/chaos/chaos_chaman.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/chaos/chaos_chaman.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
+<h2 id="core-1"><a class="header" href="#core-1">Core</a></h2>
+<h3 id="guerriers-du-chaos"><a class="header" href="#guerriers-du-chaos">Guerriers du Chaos</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/chaos/chaos_guerriers_1.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/chaos/chaos_guerriers_1.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="ungors"><a class="header" href="#ungors">Ungors</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/chaos/chaos_ungors_1.webp" alt=""><span class="img-wrapper"><img src="img/warhammer-old-world/chaos/chaos_ungors_1.webp" alt=""></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : soclage à faire</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
+<li><strong>Commentaire</strong> :</li>
 </ul>
 </div>
 
@@ -449,7 +454,7 @@ theme/
 <h1 id="empire"><a class="header" href="#empire">Empire</a></h1>
 <p>L’Empire Humain, bastion de la civilisation dans l’Ancien Monde.</p>
 <h2 id="chef-2"><a class="header" href="#chef-2">Chef</a></h2>
-<h2 id="core-1"><a class="header" href="#core-1">Core</a></h2>
+<h2 id="core-2"><a class="header" href="#core-2">Core</a></h2>
 <p>Unités de base de l’armée de l’Empire.</p>
 <h2 id="spécial-1"><a class="header" href="#spécial-1">Spécial</a></h2>
 <h2 id="rare-1"><a class="header" href="#rare-1">Rare</a></h2>
@@ -462,7 +467,7 @@ theme/
 <p>Les fiches seront ajoutées prochainement.</p>
 <h2 id="chef-3"><a class="header" href="#chef-3">Chef</a></h2>
 <p>Mages et nobles elfiques.</p>
-<h2 id="core-2"><a class="header" href="#core-2">Core</a></h2>
+<h2 id="core-3"><a class="header" href="#core-3">Core</a></h2>
 <p>Unités de base elfiques.</p>
 <h2 id="spécial-2"><a class="header" href="#spécial-2">Spécial</a></h2>
 <h2 id="rare-2"><a class="header" href="#rare-2">Rare</a></h2>
@@ -613,25 +618,16 @@ J’ai du la peindre vers 2007, quand j’ai acheté la boite de base !</li>
 
 </div>
 
-<h2 id="core-3"><a class="header" href="#core-3">Core</a></h2>
+<h2 id="core-4"><a class="header" href="#core-4">Core</a></h2>
 <p>Unités de base de l’armée naine.</p>
 <h3 id="arquebusiers-1"><a class="header" href="#arquebusiers-1">Arquebusiers 1</a></h3>
-<div class="fig-card">
-<div class="fig-image">
 <p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/Arquebusiers.webp" alt="Arquebusiers"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/Arquebusiers.webp" alt="Arquebusiers"></span></label></p>
 <p><em>16 figurines - Base 25mm</em></p>
-</div>
-
-<div class="fig-description">
 <ul>
 <li><strong>Statut</strong> : en cours</li>
 <li><strong>Référence</strong> : Games Workshop, Warhammer Old World Nains, 2022</li>
 <li><strong>Commentaire</strong> :</li>
 </ul>
-</div>
-
-</div>
-
 <h3 id="arquebusiers-2"><a class="header" href="#arquebusiers-2">Arquebusiers 2</a></h3>
 <div class="fig-card-reverse">
 <div class="fig-image">
@@ -682,10 +678,10 @@ Elles sont difficiles à trouver, il y en a de temps en temps sur leboncoin.</li
 
 <h2 id="spécial-3"><a class="header" href="#spécial-3">Spécial</a></h2>
 <h3 id="brise-fer"><a class="header" href="#brise-fer">Brise Fer</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/brise_fer_1.webp" alt="Brise Fer"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/brise_fer_1.webp" alt="Brise Fer"></span></label></p>
 <div class="fig-card">
 <div class="fig-image">
-<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/brise_fer_1.webp" alt="Brise Fer"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/brise_fer_1.webp" alt="Brise Fer"></span></label>
-<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/brise_fer_2.webp" alt="Le QG"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/brise_fer_2.webp" alt="Le QG"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/brise_fer_2.webp" alt="Le QG"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/brise_fer_2.webp" alt="Le QG"></span></label></p>
 </div>
 
 <div class="fig-description">
@@ -701,9 +697,9 @@ J’aimerais en rajouter 6 de plus pour un troisième rang, notamment avec la sc
 
 <h3 id="canons"><a class="header" href="#canons">Canons</a></h3>
 <div class="fig-card-reverse">
-<div class="fig-image">
-<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_canon_1.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_canon_1.webp" alt="Canon"></span></label>
-<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_canon_2.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_canon_2.webp" alt="Canon"></span></label></p>
+<div class="fig-image grid-2">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_canon_1.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_canon_1.webp" alt="Canon"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_canon_2.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_canon_2.webp" alt="Canon"></span></label></p>
 </div>
 
 <div class="fig-description">
@@ -718,9 +714,9 @@ J’aimerais en rajouter 6 de plus pour un troisième rang, notamment avec la sc
 
 <h3 id="catapultes-à-rancunes"><a class="header" href="#catapultes-à-rancunes">Catapultes à rancunes</a></h3>
 <div class="fig-card">
-<div class="fig-image">
-<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_catapulte_1.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_catapulte_1.webp" alt="Canon"></span></label>
-<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_catapulte_2.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_catapulte_2.webp" alt="Canon"></span></label></p>
+<div class="fig-image grid-2">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_catapulte_1.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_catapulte_1.webp" alt="Canon"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/nains/nains_catapulte_2.webp" alt="Canon"><span class="img-wrapper"><img src="img/warhammer-old-world/nains/nains_catapulte_2.webp" alt="Canon"></span></label></p>
 </div>
 
 <div class="fig-description">
@@ -759,10 +755,74 @@ J’aimerais en rajouter 6 de plus pour un troisième rang, notamment avec la sc
 <p>Les fiches seront ajoutées prochainement.</p>
 <h2 id="chef-5"><a class="header" href="#chef-5">Chef</a></h2>
 <p>Boss et chamans orques.</p>
-<h2 id="core-4"><a class="header" href="#core-4">Core</a></h2>
+<h2 id="core-5"><a class="header" href="#core-5">Core</a></h2>
 <p>Unités de base orques et goblines.</p>
 <h2 id="spécial-4"><a class="header" href="#spécial-4">Spécial</a></h2>
 <h2 id="rare-4"><a class="header" href="#rare-4">Rare</a></h2>
+</div>
+
+<div style="break-before: page; page-break-before: always;"></div>
+<div class="army-mercenaires">
+<h1 id="mercenaires"><a class="header" href="#mercenaires">Mercenaires</a></h1>
+<p>Les mercenaires</p>
+<h2 id="ogres"><a class="header" href="#ogres">Ogres</a></h2>
+<h3 id="hrothyogg"><a class="header" href="#hrothyogg">Hrothyogg</a></h3>
+<div class="fig-card">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_12_rhothyogg.webp" alt="Hrothyogg"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_12_rhothyogg.webp" alt="Hrothyogg"></span></label></p>
+<p><em>1 figurine - Base 40mm - Travail en cours</em></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : en cours</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Ogres, 2022</li>
+<li><strong>Commentaire</strong> : J’adore cette figurine, j’ai hâte de la peindre !</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="ogres-buffles-des-terres-arides"><a class="header" href="#ogres-buffles-des-terres-arides">Ogres Buffles des Terres Arides</a></h3>
+<div class="fig-card-reverse">
+<div class="fig-image">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_buffles_1.webp" alt="Ogres Buffles"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_buffles_1.webp" alt="Ogres Buffles"></span></label></p>
+</div>
+
+<div class="fig-description">
+<ul>
+<li><strong>Statut</strong> : à socler</li>
+<li><strong>Référence</strong> : Games Workshop, Warhammer Old World Ogres, 2022</li>
+<li><strong>Commentaire</strong> : J’ai vraiment adoré peindre ces ogres, ce qui m’a donné envie d’en avoir plus.
+J’en ai ajouté un 6e qui attent sa peinture.</li>
+</ul>
+</div>
+
+</div>
+
+<h3 id="ogres-mercenaires"><a class="header" href="#ogres-mercenaires">Ogres Mercenaires</a></h3>
+<div class="fig-card">
+<div class="fig-image grid-2">
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_11.webp" alt="Ogres Buffles"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_11.webp" alt="Ogres Buffles"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_8.webp" alt="Ogres Buffles"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_8.webp" alt="Ogres Buffles"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_7.webp" alt="Ogres Buffles"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_7.webp" alt="Ogres Buffles"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_9.webp" alt="Ogres Buffles"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_9.webp" alt="Ogres Buffles"></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="img/warhammer-old-world/ogre/ogre_10.webp" alt="Ogres Buffles"><span class="img-wrapper"><img src="img/warhammer-old-world/ogre/ogre_10.webp" alt="Ogres Buffles"></span></label></p>
+</div>
+
+<div class="fig-description">
+<p>*5 figurine - Base 40mm - Travail en cours*</p>
+
+<ul>
+<li><strong>Statut</strong> : en cours</li>
+<li><strong>Référence</strong> : Games Workshop, C23 Ogres, Jes Goodwin, 1985 - 1989</li>
+<li><strong>Commentaire</strong> : Des figurines d’Ogres dénichées sur leboncoin pour servir d’escorte à Hrothyogg.
+Elles sont un peu plus anciennes que les ogres buffles – que dis-je, certaines datent de 1985 ! – et du coup, un peu plus petites, moins massives.</li>
+</ul>
+</div>
+
+</div>
+
 </div>
 
 <div style="break-before: page; page-break-before: always;"></div>
@@ -770,8 +830,8 @@ J’aimerais en rajouter 6 de plus pour un troisième rang, notamment avec la sc
 <p>Collection de recettes et techniques de peinture pour figurines.</p>
 <h2 id="liste-des-recettes"><a class="header" href="#liste-des-recettes">Liste des recettes</a></h2>
 <ul>
-<li><a href="/recettes/armures.html">Armures</a></li>
-<li><a href="/recettes/cuirs.html">Cuirs et Peaux</a></li>
+<li><a href="#armures">Armures</a></li>
+<li><a href="#cuirs">Cuirs et Peaux</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="armures"><a class="header" href="#armures">Armures</a></h1>
